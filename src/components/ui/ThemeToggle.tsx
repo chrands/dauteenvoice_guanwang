@@ -36,7 +36,7 @@ export const ThemeToggle: React.FC = () => {
         <button
             onClick={toggle}
             className="w-4 h-4 rounded-full transition-colors"
-            style={{ backgroundColor: isDark ? '#f2f1ec' : '#1a1a1a' }}
+            style={{ backgroundColor: isDark ? '#F3F1E7' : '#191919' }}
             aria-label={isDark ? '切换到日间模式' : '切换到夜间模式'}
             title={isDark ? '切换到日间模式' : '切换到夜间模式'}
         />

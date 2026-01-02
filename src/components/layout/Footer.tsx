@@ -7,21 +7,36 @@ export const Footer: React.FC = () => {
     return (
         <footer className="py-12 md:py-16 border-t border-border-light">
             <Container>
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 mb-8 md:mb-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 mb-8 md:mb-12">
+                    {/* Brand */}
                     <div>
-                        <Link href="/" className="text-base md:text-lg">
+                        <Link href="/" className="text-base md:text-lg font-medium">
                             {siteConfig.name}
                         </Link>
+                        <p className="text-sm text-text-muted mt-2">
+                            新质诊疗技术传播服务商
+                        </p>
                     </div>
 
-                    <div className="space-y-2 md:space-y-3 text-sm text-text-secondary">
+                    {/* Contact */}
+                    <div className="space-y-2 text-sm text-text-secondary">
+                        <p className="text-xs text-text-muted mb-3">联系方式</p>
                         <p>{siteConfig.contact.email}</p>
                         <p>微信: {siteConfig.contact.wechat}</p>
                     </div>
 
-                    <div className="text-xs text-text-muted leading-relaxed sm:col-span-2 lg:col-span-1">
-                        <p className="text-sm mb-2">免责声明</p>
-                        <p>{siteConfig.disclaimer}</p>
+                    {/* Social QR Codes */}
+                    <div className="lg:col-span-2">
+                        <p className="text-xs text-text-muted mb-3">关注我们</p>
+                        <div className="w-20 h-20 shrink-0 rounded-lg border border-border-light bg-transparent flex items-center justify-center text-xs text-text-muted">
+                            微信公众号
+                        </div>
+                        <div className="w-20 h-20 shrink-0 rounded-lg border border-border-light bg-transparent flex items-center justify-center text-xs text-text-muted">
+                            视频号
+                        </div>
+                        <div className="w-20 h-20 shrink-0 rounded-lg border border-border-light bg-transparent flex items-center justify-center text-xs text-text-muted">
+                            小红书
+                        </div>
                     </div>
                 </div>
 

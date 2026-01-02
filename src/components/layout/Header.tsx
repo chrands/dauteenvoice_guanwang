@@ -9,9 +9,11 @@ import { siteConfig } from '@/data/siteConfig';
 
 export const Header: React.FC = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [mounted, setMounted] = useState(false);
     const [isDark, setIsDark] = useState(false);
 
     useEffect(() => {
+        setMounted(true);
         const checkDarkMode = () => {
             setIsDark(document.documentElement.classList.contains('dark'));
         };
@@ -23,13 +25,16 @@ export const Header: React.FC = () => {
         return () => observer.disconnect();
     }, []);
 
+    // 使用默认 logo.png 避免 SSR 水合不匹配
+    const logoSrc = mounted && isDark ? "/logo_dark.png" : "/logo.png";
+
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md">
+        <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-sm border-b border-border-light">
             <Container>
                 <div className="flex items-center justify-between h-14 md:h-16">
                     <Link href="/" className="shrink-0">
                         <Image
-                            src={isDark ? "/logo_dark.png" : "/logo.png"}
+                            src={logoSrc}
                             alt={siteConfig.name}
                             width={140}
                             height={40}

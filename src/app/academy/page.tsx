@@ -84,10 +84,10 @@ export default function AcademyPage() {
                                     <div className="flex items-center gap-2 sm:gap-3 shrink-0">
                                         <Tag>{course.category}</Tag>
                                         <span className={`text-xs px-2 md:px-3 py-1 md:py-1.5 rounded-full border whitespace-nowrap ${course.status === '可合作'
-                                                ? 'border-green-400 text-green-700 bg-green-50'
-                                                : course.status === '筹备中'
-                                                    ? 'border-amber-400 text-amber-700 bg-amber-50'
-                                                    : 'border-border-light text-text-muted bg-white/50'
+                                            ? 'border-green-400 text-green-700 bg-green-50'
+                                            : course.status === '筹备中'
+                                                ? 'border-amber-400 text-amber-700 bg-amber-50'
+                                                : 'border-border-light text-text-muted bg-transparent'
                                             }`}>
                                             {course.status}
                                         </span>

@@ -8,7 +8,7 @@ interface CardProps {
 
 export const Card: React.FC<CardProps> = ({ children, className = "", hoverable = true }) => {
     return (
-        <div className={`p-8 border border-border-light bg-white/40 backdrop-blur-sm transition-all duration-300 ${hoverable ? 'hover:border-accent/20 hover:shadow-sm hover:translate-y-[-2px]' : ''} ${className}`}>
+        <div className={`p-8 bg-white border border-border-light shadow-sm transition-all duration-300 rounded-[1px] ${hoverable ? 'hover:shadow-md hover:-translate-y-[2px] hover:border-black/5' : ''} ${className}`}>
             {children}
         </div>
     );
